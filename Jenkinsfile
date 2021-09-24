@@ -20,5 +20,20 @@ ls'''
       }
     }
 
+    stage('Docker publish') {
+      environment {
+        registry = 'antonpryhodko/artefacts'
+        registryCredential = 'dockerhub_id'
+      }
+      steps {
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+
+      }
+    }
+
   }
 }
