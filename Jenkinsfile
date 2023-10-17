@@ -31,6 +31,12 @@ pipeline {
           }
         }
 
+        script {
+          dicker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+
       }
     }
 
