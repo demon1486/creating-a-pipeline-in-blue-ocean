@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'sudo npm install --save-dev'
+        sh 'sh npm install --save-dev'
       }
     }
 
